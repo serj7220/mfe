@@ -1,4 +1,4 @@
-name: deploy-container
+name: deploy-container-main
 
 on:
   push:
@@ -6,6 +6,8 @@ on:
       - main
     paths:
       - "packages/container/**"
+
+  workflow_dispatch: {}
 
 defaults:
   run:
