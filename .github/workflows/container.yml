@@ -38,5 +38,10 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: eu-north-1 # Set the region here
 
+      # --- ADD THIS DEBUGGING STEP ---
+      - name: Debug Environment Variables
+        run: env | sort
+      # --------------------------------
+
       - name: Deploy to S3
         run: aws s3 sync dist s3://${{ secrets.AWS_S3_BUCKET_NAME }}/container/latest
